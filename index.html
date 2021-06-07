@@ -17,30 +17,31 @@
     </nav>
 
     <div class="container mt-4">
+        
        <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                 <div class="card bg-light-green border-0" id="addBookSection">
                     <div class="card-body">
                         <h5 class="card-title border-bottom pb-3 border-green">Create Book</h5>
-                        <form id="createForm">
+                        <form  id="createForm">
                             <div class="mb-3">
                               <label for="bookTitle" class="form-label">Book Title</label>
-                              <input type="text" class="form-control" id="bookTitle" placeholder="Laskar Pelangi...">   
+                              <input required type="text" class="form-control" id="bookTitleCreate" placeholder="Laskar Pelangi...">   
                             </div>
 
                             <div class="mb-3">
                                 <label for="bookAuthor" class="form-label">Book Author</label>
-                                <input type="text" class="form-control" id="bookAuthor" placeholder="Andrea Hirata...">   
+                                <input required type="text" class="form-control" id="bookAuthorCreate" placeholder="Andrea Hirata...">   
                             </div>
 
                             <div class="mb-3">
                                 <label for="relaseYear" class="form-label">Release Year</label>
-                                <input type="number" class="form-control" id="releaseYear" placeholder="2005">   
+                                <input required type="number" class="form-control" id="releaseYearCreate" placeholder="2005">   
                             </div>
                             
                             <div class="mb-3 form-check">
-                              <input type="checkbox" class="form-check-input" id="alreadyRead">
-                              <label class="form-check-label" for="alreadyRead">Already Read</label>
+                              <input type="checkbox" class="form-check-input" id="alreadyReadCreate">
+                              <label class="form-check-label" for="alreadyReadCreate">Already Read</label>
                             </div>
                             <div class="d-grid gap-2 mb-2">
                                 <input type="submit" id="createBookButton" class="btn btn-green" value="Create Book">
@@ -61,58 +62,20 @@
                 </div>
 
                 <div class="card bg-light-green border-0 mt-4" >
-                    <div class="card-body">
-                        <h5 class="card-title border-bottom pb-3 border-green">To Read</h5>
-                        <div class="card mt-3 bg-light-gray border-0" >
-                            <div class="card-body">
-                                <div class="float-start">
-                                    <h5 class="card-title font-w-700">Laskar Pelangi</h5>
-                                    <h6 class="card-subtitle mt-2 text-muted">By Andrea Hirata(2008)</h6>
-                                </div>
-                                <div class="float-end mt-2">
-                                    <button class="btn  btn-green">Finished</button>
-                                    <button class="btn modal-edit-button btn-secondary-green">Edit</button>
-                                    <button class="btn modal-delete-button btn-secondary-green">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        
+                    <div class="card-header bg-light-green border-0">
+                        <h5 class="card-title border-bottom  border-green ">To Read</h5>
+                    </div>
+                    <div class="card-body pt-0" id="toReadContainer">
+                       
                     </div>
                 </div>
 
-                <div class="card bg-light-green border-0 mt-4" id="addBookSection">
-                    <div class="card-body">
-                        <h5 class="card-title border-bottom pb-3 border-green">Finish Read</h5>
-                        <div class="card mt-3  border-0" >
-                            <div class="card-body">
-                                <div class="float-start">
-                                    <h5 class="card-title font-w-700">Cantik Itu Luka</h5>
-                                    <h6 class="card-subtitle mt-2 text-muted">Eka Kurniawan(2008)</h6>
-                                </div>
-                                <div class="float-end mt-2">
-                                    <button  class="btn  btn-green">Unfinish</button>
-                                    <button  class="btn  modal-edit-button btn-secondary-green">Edit</button>
-                                    <button class="btn  modal-delete-button btn-secondary-green">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card mt-3  border-0" >
-                            <div class="card-body">
-                                <div class="float-start">
-                                    <h5 class="card-title font-w-700">Subtle Art Of Not Giving a Fuck</h5>
-                                    <h6 class="card-subtitle mt-2 text-muted">Mark Manson(2008)</h6>
-                                </div>
-                                <div class="float-end mt-2">
-                                    <button class="btn  btn-green">Unfinish</button>
-                                    <button class="btn modal-edit-button btn-secondary-green">Edit</button>
-                                    <button class="btn modal-delete-button btn-secondary-green">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        
+                <div class="card bg-light-green border-0 mt-4 mb-5">
+                    <div class="card-header bg-light-green border-0">
+                        <h5 class="card-title border-bottom  border-green ">Finish Read</h5>
+                    </div>
+                    <div class="card-body  pt-0" id="finishReadContainer">
+                                       
                     </div>
                 </div>
             </div>
@@ -162,15 +125,16 @@
             </div>
         </div>
     </div>
-    <footer class="bg-green text-center text-lg-start mt-5">
+    <footer class="bg-green text-center text-lg-start mt-5 fixed-bottom">
         <div class="text-center text-white">
           © 2021 Copyright:
           <a class="text-white" href="#">adityanegara</a>
         
         </div>
     </footer>
-
- 
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/dom.js"></script>
+    <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
