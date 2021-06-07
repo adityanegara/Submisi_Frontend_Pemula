@@ -5,7 +5,7 @@ const BOOK_YEAR_CREATE_ID = "releaseYearCreate";
 const BOOK_YEAR_COMPLETE_ID = "alreadyReadCreate";
 const toReadContainer = document.getElementById("toReadContainer");
 const finishReadContainer = document.getElementById("finishReadContainer");
-
+const deleteButton = document.querySelector("#delete-button"); 
 
 const changeFinishStatus = (element) =>{
     const bookId = element.dataset.id;
@@ -14,9 +14,17 @@ const changeFinishStatus = (element) =>{
     renderBooks();
 }
 
-const moveToUnfinish = () =>{
+deleteButton.addEventListener("click", function(){
+    modalDeleteBackground.classList.remove('modal-delete-background-active');
+    const bookId = this.dataset.id;
+    deleteBook(bookId);
+    saveToLocalStorage();
+    renderBooks();
+  })
+  
 
-}
+
+
 
 formCreate.addEventListener("submit", (e)=>{
     event.preventDefault();

@@ -17,6 +17,10 @@ const changeComplegeStatus = (bookId) =>{
     });  
 }
 
+const deleteBook = (bookId) =>{
+    books = books.filter(book=> book.id != bookId);
+}
+
 
 
 
@@ -27,7 +31,6 @@ const loadBooksFromStorage = () =>{
         if(data !== null){
             books = data;
         }
-        console.log(books);
     }
 }
 
@@ -70,8 +73,8 @@ const insertBookElement = (book) =>{
                         </div>
                         <div class="float-end mt-2">
                             <button onClick = "changeFinishStatus(this)" data-id="${book.id}" class="btn  btn-green ">Finish</button>
-                            <button onClick = "openEditModal()" class="btn modal-edit-button btn-secondary-green">Edit</button>
-                            <button onClick = "openDeleteModal()" class="btn modal-delete-button btn-secondary-green">Delete</button>
+                            <button onClick = "openEditModal(this)" class="btn modal-edit-button btn-secondary-green">Edit</button>
+                            <button onClick = "openDeleteModal(this)" data-title  = "${book.title}" data-id="${book.id}" class="btn modal-delete-button btn-secondary-green">Delete</button>
                         </div>
                     </div>
              </div>`
@@ -84,8 +87,8 @@ const insertBookElement = (book) =>{
                         </div>
                         <div class="float-end mt-2">
                             <button onClick = "changeFinishStatus(this)" data-id="${book.id}"  class="btn  btn-green ">Unfinish</button>
-                            <button onClick = "openEditModal()" class="btn modal-edit-button btn-secondary-green">Edit</button>
-                            <button onClick = "openDeleteModal()" class="btn modal-delete-button btn-secondary-green">Delete</button>
+                            <button onClick = "openEditModal(this)" class="btn modal-edit-button btn-secondary-green">Edit</button>
+                            <button onClick = "openDeleteModal(this)" data-title  = "${book.title}" data-id="${book.id}" class="btn modal-delete-button btn-secondary-green">Delete</button>
                         </div>
                     </div>
                 </div>`
