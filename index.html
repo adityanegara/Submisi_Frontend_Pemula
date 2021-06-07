@@ -87,24 +87,25 @@
             <div class="card border-0" id="addBookSection">
                 <div class="card-body">
                     <h5 class="card-title border-bottom pb-3 border-green">Edit Book</h5>
-                    <form >
+                    <form id="edit-form">
                         <div class="mb-3">
                           <label  class="form-label">Book Title</label>
-                          <input type="text" class="form-control"  placeholder="Laskar Pelangi...">   
+                          <input required type="text" class="form-control" id="book-title-edit"  placeholder="Laskar Pelangi...">   
+                           <input type="hidden" id="book-id-edit">
                         </div>
 
                         <div class="mb-3">
                             <label  class="form-label">Book Author</label>
-                            <input type="text" class="form-control" placeholder="Andrea Hirata...">   
+                            <input required type="text" class="form-control" id="book-author-edit" placeholder="Andrea Hirata...">   
                         </div>
 
                         <div class="mb-3">
                             <label for="relaseYear" class="form-label">Release Year</label>
-                            <input type="number" class="form-control"  placeholder="2005">   
+                            <input required type="number" class="form-control" id="book-year-edit"  placeholder="2005">   
                         </div>
                         <div class="d-grid gap-2 mb-2">
                             <input type="submit"  class="btn btn-green" value="Edit Book">
-                            <button type="button" class="btn btn-secondary-green modal-edit-close" >Close</button>
+                            <button type="button" id="edit-button" class="btn btn-secondary-green modal-edit-close " >Close</button>
                         </div>
                     </form>
                 </div>

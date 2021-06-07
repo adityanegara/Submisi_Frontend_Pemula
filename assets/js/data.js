@@ -21,6 +21,15 @@ const deleteBook = (bookId) =>{
     books = books.filter(book=> book.id != bookId);
 }
 
+const editBook = (bookEdit) =>{
+    books.forEach(book => {
+        if(book.id.toString() == bookEdit.id){
+            book.title = bookEdit.title;
+            book.author = bookEdit.author;
+            book.year = bookEdit.year;
+        }
+    });  
+}
 
 
 
@@ -73,7 +82,11 @@ const insertBookElement = (book) =>{
                         </div>
                         <div class="float-end mt-2">
                             <button onClick = "changeFinishStatus(this)" data-id="${book.id}" class="btn  btn-green ">Finish</button>
-                            <button onClick = "openEditModal(this)" class="btn modal-edit-button btn-secondary-green">Edit</button>
+                            <button onClick = "openEditModal(this)" data-id  = "${book.id}"
+                                                                    data-title = "${book.title}"
+                                                                    data-author = "${book.author}"
+                                                                    data-year = "${book.year}"
+                                                                    class="btn modal-edit-button btn-secondary-green">Edit</button>
                             <button onClick = "openDeleteModal(this)" data-title  = "${book.title}" data-id="${book.id}" class="btn modal-delete-button btn-secondary-green">Delete</button>
                         </div>
                     </div>
@@ -87,7 +100,11 @@ const insertBookElement = (book) =>{
                         </div>
                         <div class="float-end mt-2">
                             <button onClick = "changeFinishStatus(this)" data-id="${book.id}"  class="btn  btn-green ">Unfinish</button>
-                            <button onClick = "openEditModal(this)" class="btn modal-edit-button btn-secondary-green">Edit</button>
+                            <button onClick = "openEditModal(this)" data-id  = "${book.id}"
+                                                                    data-title = "${book.title}"
+                                                                    data-author = "${book.author}"
+                                                                    data-year = "${book.year}"
+                            class="btn modal-edit-button btn-secondary-green">Edit</button>
                             <button onClick = "openDeleteModal(this)" data-title  = "${book.title}" data-id="${book.id}" class="btn modal-delete-button btn-secondary-green">Delete</button>
                         </div>
                     </div>

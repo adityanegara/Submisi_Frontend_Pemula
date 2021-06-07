@@ -6,6 +6,7 @@ const BOOK_YEAR_COMPLETE_ID = "alreadyReadCreate";
 const toReadContainer = document.getElementById("toReadContainer");
 const finishReadContainer = document.getElementById("finishReadContainer");
 const deleteButton = document.querySelector("#delete-button"); 
+const formEdit = document.getElementById("edit-form");
 
 const changeFinishStatus = (element) =>{
     const bookId = element.dataset.id;
@@ -24,10 +25,22 @@ deleteButton.addEventListener("click", function(){
   
 
 
-
+formEdit.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    modalEditBackground.classList.remove('modal-edit-background-active');
+    const book = {
+        id: document.getElementById("book-id-edit").value,
+        title :  document.getElementById("book-title-edit").value,
+        author :  document.getElementById("book-author-edit").value,
+        year :  document.getElementById("book-year-edit").value
+    }
+    editBook(book);
+    saveToLocalStorage();
+    renderBooks();
+})
 
 formCreate.addEventListener("submit", (e)=>{
-    event.preventDefault();
+    e.preventDefault();
     const book = {
         id: +new Date(),
         title :  document.getElementById(BOOK_TITLE_CREATE_ID).value,

@@ -20,6 +20,13 @@ modalDeleteClose.addEventListener("click", function(){
 
 const openEditModal = (element) =>{
   const bookId = element.dataset.id;
+  const bookTitle = element.dataset.title;
+  const bookAuthor = element.dataset.author;
+  const bookYear = element.dataset.year;
+  document.getElementById("book-title-edit").value = bookTitle;
+  document.getElementById("book-author-edit").value = bookAuthor;
+  document.getElementById("book-year-edit").value = bookYear;
+  document.getElementById("book-id-edit").value = bookId;
   modalEditBackground.classList.add('modal-edit-background-active');
 }
 
