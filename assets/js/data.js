@@ -21,6 +21,18 @@ const deleteBook = (bookId) =>{
     books = books.filter(book=> book.id != bookId);
 }
 
+const searchBook = (keyword) =>{
+    searchBooks = books.filter(book=> book.title.toString().includes(keyword));
+    emptyContainer();
+    searchBooks.forEach(book => {
+        if(book.isComplete != true){
+            toReadContainer.innerHTML += insertBookElement(book);
+        }else{
+            finishReadContainer.innerHTML += insertBookElement(book);
+        }
+    });
+}
+
 const editBook = (bookEdit) =>{
     books.forEach(book => {
         if(book.id.toString() == bookEdit.id){

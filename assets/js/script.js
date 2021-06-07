@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function(){
-  // localStorage.removeItem(STORAGE_KEY);
   if(isStorageExist()){
     if(isKeyExist(STORAGE_KEY)){
         loadBooksFromStorage();

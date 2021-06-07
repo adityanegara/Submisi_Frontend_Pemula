@@ -7,7 +7,7 @@ const toReadContainer = document.getElementById("toReadContainer");
 const finishReadContainer = document.getElementById("finishReadContainer");
 const deleteButton = document.querySelector("#delete-button"); 
 const formEdit = document.getElementById("edit-form");
-
+const searchButton = document.getElementById("search-button");
 const changeFinishStatus = (element) =>{
     const bookId = element.dataset.id;
     changeComplegeStatus(bookId);
@@ -23,7 +23,10 @@ deleteButton.addEventListener("click", function(){
     renderBooks();
   })
   
-
+searchButton.addEventListener("click", function(){
+    const keyword = document.getElementById("search-input").value;
+    searchBook(keyword);
+});
 
 formEdit.addEventListener("submit", (e)=>{
     e.preventDefault();
