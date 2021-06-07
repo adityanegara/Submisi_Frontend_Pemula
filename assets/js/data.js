@@ -9,6 +9,17 @@ const isStorageExist = () =>{
     }
 }
 
+const changeComplegeStatus = (bookId) =>{
+    books.forEach(book => {
+        if(book.id.toString() == bookId){
+            book.isComplete = !book.isComplete;
+        }
+    });  
+}
+
+
+
+
 const loadBooksFromStorage = () =>{
     const serializedData = localStorage.getItem(STORAGE_KEY);
     if(serializedData != ""){
@@ -58,7 +69,7 @@ const insertBookElement = (book) =>{
                             <h6 class="card-subtitle mt-2 text-muted">By ${book.author}(${book.year})</h6>
                         </div>
                         <div class="float-end mt-2">
-                            <button onClick = "moveToUnfinish()"   class="btn  btn-green ">Finish</button>
+                            <button onClick = "changeFinishStatus(this)" data-id="${book.id}" class="btn  btn-green ">Finish</button>
                             <button onClick = "openEditModal()" class="btn modal-edit-button btn-secondary-green">Edit</button>
                             <button onClick = "openDeleteModal()" class="btn modal-delete-button btn-secondary-green">Delete</button>
                         </div>
@@ -72,7 +83,7 @@ const insertBookElement = (book) =>{
                             <h6 class="card-subtitle mt-2 text-muted">By ${book.author}(${book.year})</h6>
                         </div>
                         <div class="float-end mt-2">
-                            <button onClick = "moveToUnfinish()"   class="btn  btn-green ">Unfinish</button>
+                            <button onClick = "changeFinishStatus(this)" data-id="${book.id}"  class="btn  btn-green ">Unfinish</button>
                             <button onClick = "openEditModal()" class="btn modal-edit-button btn-secondary-green">Edit</button>
                             <button onClick = "openDeleteModal()" class="btn modal-delete-button btn-secondary-green">Delete</button>
                         </div>

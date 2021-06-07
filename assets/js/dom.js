@@ -7,7 +7,16 @@ const toReadContainer = document.getElementById("toReadContainer");
 const finishReadContainer = document.getElementById("finishReadContainer");
 
 
+const changeFinishStatus = (element) =>{
+    const bookId = element.dataset.id;
+    changeComplegeStatus(bookId);
+    saveToLocalStorage();
+    renderBooks();
+}
 
+const moveToUnfinish = () =>{
+
+}
 
 formCreate.addEventListener("submit", (e)=>{
     event.preventDefault();
